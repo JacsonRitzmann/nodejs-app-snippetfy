@@ -1,0 +1,31 @@
+{% extends 'layouts/default.njk' %} {% block body %}
+<div class="wrapper">
+  {% include 'partials/nav.njk' %} {% include 'partials/snippet.njk' %}
+  <section class="snippet-content">
+    <div class="actions">
+      <a href="#" data-modal-open="#edit-snippt" class="btn btn-success">EDITAR</a>
+      <a href="#" data-modal-open="#delete-snippt" class="btn btn-danger">EXCLUIR</a>
+    </div>
+    <h1>{{ currentSnippet.title }}</h1>
+    <hr>
+    <div class="content">{{ currentSnippet.formatContent | safe }}</div>
+  </section>
+  <div class="modal" id="edit-snippt">
+    <form class="modal-content" action="/app/category/{{ ativeCategory }}/snippet/{{ currentSnippet.id }}?_method=PUT" method="post" >
+      <input type="text" name="title" id="title" placeholder="Titulo da Categoria" value="{{ currentSnippet.title }}" />
+      <div class="content-container">
+        <textarea name="content" id="content" class="mde" placeholder="Conteúdo do Snippet" >{{ currentSnippet.content }}</textarea>
+      </div>
+      <button type="submit">SALVAR SNIPPET</button>
+      <a href="#" data-modal-close="#edit-snippt">CANCELAR</a>
+    </form>
+  </div>
+  <div class="modal" id="delete-snippt">
+    <form class="modal-content" action="/app/category/{{ ativeCategory }}/snippet/{{ currentSnippet.id }}?_method=DELETE" method="post" >
+      <h2>Deseja realmente excluir o Snippet</h2>
+      <button type="submit">EXCLUIR SNIPPET</button>
+      <a href="#" data-modal-close="#delete-snippt">CANCELAR</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

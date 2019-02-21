@@ -1,0 +1,11 @@
+{% extends 'layouts/default.njk' %}
+{% block body %}
+  <div class="auth-wrapper">
+    <form action="/resetPassword" method="post" class="form-signin">
+      <h1>Reset de Senha</h1>
+      <input type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+      <button type="submit">Enviar</button>
+      <a href="/setNewPassword">Já possuo token</a>
+    </form>
+  </div>
+{% endblock %}

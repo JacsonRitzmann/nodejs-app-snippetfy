@@ -1,0 +1,14 @@
+{% extends 'layouts/default.njk' %}
+{% block body %}
+  <div class="auth-wrapper">
+    <form action="/setNewPassword" method="post" class="form-signin">
+      <h1>Criar Nova Senha</h1>
+      <input type="email" name="email" id="email" placeholder="Digite seu e-mail" />
+      <input type="number" name="token" id="token" placeholder="Digite seu token" />
+      <input type="password" name="password" id="password" placeholder="Digite sua senha" />
+      <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirme a senha" />
+      <button type="submit">Enviar</button>
+      <a href="/">Já tenho conta</a>
+    </form>
+  </div>
+{% endblock %}

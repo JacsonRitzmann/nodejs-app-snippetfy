@@ -1,0 +1,27 @@
+<section class="snippets-list">
+  <div class="list-header">
+    <a href="#" data-modal-open="#new-snippt">NOVO SNIPPET</a>
+    <form action="/app/category/{{ ativeCategory }}/search" method="post">
+      <div class="container-4">
+        <input type="text" name="search" id="search" placeholder="Search..." />
+        <button type="submit" class="icon"><i class="fa fa-search"></i></button>
+      </div>
+    </form>
+  </div>
+  {% for snippet in snippets %}
+  <a href="/app/category/{{ ativeCategory }}/snippet/{{ snippet.id }}">
+    <strong>{{ snippet.title }}</strong>
+    <p>{{ snippet.excerpt }}</p>
+  </a>
+  {% endfor %}
+</section>
+<div class="modal" id="new-snippt">
+  <form  class="modal-content" action="/app/category/{{ ativeCategory }}/snippet/create" method="post" >
+    <input type="text" name="title" id="title" placeholder="Titulo da Categoria" />
+    <div class="content-container">
+      <textarea name="content" id="content" class="mde" placeholder="Conteúdo do Snippet" ></textarea>
+    </div>
+    <button type="submit">SALVAR SNIPPET</button>
+    <a href="#" data-modal-close="#new-snippt">CANCELAR</a>
+  </form>
+</div>
