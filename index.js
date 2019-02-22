@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const nunjucks = require('nunjucks')
@@ -25,4 +27,4 @@ app.use(methodOverride('_method'))
 
 app.use('/', routes)
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)

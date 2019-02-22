@@ -1,10 +1,10 @@
 <section class="snippets-list">
   <div class="list-header">
-    <a href="#" data-modal-open="#new-snippt">NOVO SNIPPET</a>
+    <a href="#" data-modal-open="#new-snippt"><i class="material-icons md-18">add_box</i> NOVO SNIPPET</a>
     <form action="/app/category/{{ ativeCategory }}/search" method="post">
       <div class="container-4">
         <input type="text" name="search" id="search" placeholder="Search..." />
-        <button type="submit" class="icon"><i class="fa fa-search"></i></button>
+        <button class="btn-success" type="submit" class="icon"><i class="fa fa-search"></i></button>
       </div>
     </form>
   </div>
@@ -21,7 +21,7 @@
     <div class="content-container">
       <textarea name="content" id="content" class="mde" placeholder="Conteúdo do Snippet" ></textarea>
     </div>
-    <button type="submit">SALVAR SNIPPET</button>
+    <button class="btn-success" type="submit"><i class="material-icons md-18">archive</i> SALVAR SNIPPET</button>
     <a href="#" data-modal-close="#new-snippt">CANCELAR</a>
   </form>
 </div>

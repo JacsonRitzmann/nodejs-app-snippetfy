@@ -3,11 +3,11 @@
   {% include 'partials/nav.njk' %} {% include 'partials/snippet.njk' %}
   <section class="snippet-content">
     <div class="actions">
-      <a href="#" data-modal-open="#edit-snippt" class="btn btn-success">EDITAR</a>
-      <a href="#" data-modal-open="#delete-snippt" class="btn btn-danger">EXCLUIR</a>
+      <a href="#" data-modal-open="#edit-snippt" class="btn btn-success"><i class="material-icons md-18">create</i> EDITAR</a>
+      <a href="#" data-modal-open="#delete-snippt" class="btn btn-danger"><i class="material-icons md-18">delete_sweep</i> EXCLUIR</a>
     </div>
     <h1>{{ currentSnippet.title }}</h1>
-    <hr>
+    <br>
     <div class="content">{{ currentSnippet.formatContent | safe }}</div>
   </section>
   <div class="modal" id="edit-snippt">
@@ -16,14 +16,14 @@
       <div class="content-container">
         <textarea name="content" id="content" class="mde" placeholder="Conteúdo do Snippet" >{{ currentSnippet.content }}</textarea>
       </div>
-      <button type="submit">SALVAR SNIPPET</button>
+      <button type="submit" class="btn-success"><i class="material-icons md-18">archive</i> SALVAR SNIPPET</button>
       <a href="#" data-modal-close="#edit-snippt">CANCELAR</a>
     </form>
   </div>
   <div class="modal" id="delete-snippt">
     <form class="modal-content" action="/app/category/{{ ativeCategory }}/snippet/{{ currentSnippet.id }}?_method=DELETE" method="post" >
       <h2>Deseja realmente excluir o Snippet</h2>
-      <button type="submit">EXCLUIR SNIPPET</button>
+      <button type="submit" class="btn-danger"><i class="material-icons md-18">delete_forever</i> EXCLUIR SNIPPET</button>
       <a href="#" data-modal-close="#delete-snippt">CANCELAR</a>
     </form>
   </div>

@@ -1,4 +1,6 @@
 const express = require('express')
+const Sentry = require('@sentry/node')
+const sentryConfig = require('../config/sentry')
 
 const routes = express.Router()
 
@@ -15,6 +17,9 @@ routes.use((req, res, next) => {
   res.locals.flashError = req.flash('error')
   next()
 })
+
+Sentry.init(sentryConfig)
+
 /**
  * Rotas Autenticação
  */
@@ -39,6 +44,8 @@ routes.use('/app', authMiddleware)
 
 routes.get('/app/dashboard', dashboardController.index)
 routes.post('/app/category/create', categoryController.store)
+routes.put('/app/category/update/:id', categoryController.update)
+routes.delete('/app/category/delete/:id', categoryController.destroy)
 routes.get('/app/category/:id', categoryController.show)
 routes.post('/app/category/:categoryId/snippet/create', snippetController.store)
 routes.get('/app/category/:categoryId/snippet/:id', snippetController.show)
@@ -57,11 +64,16 @@ routes.use((req, res) => {
 })
 
 routes.use((err, req, res, next) => {
+  // development ou production
+  if (process.env.NODE_ENV === 'production') {
+    routes.use(Sentry.Handlers.errorHandler())
+  }
+
   res.status(err.status || 500)
 
   return res.render('errors/index', {
     messge: err.message,
-    error: process.env.NODE_ENV === 'production' ? {} : err
+    error: process.env.NODE_ENV === 'development' ? {} : err
   })
 })
 

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 html {
   overflow: hidden;
@@ -151,7 +152,7 @@ textarea:focus {
 
 .wrapper nav#main .header strong {
   font-size: 16px;
-  font-weight: normal;
+  /*font-weight: normal;*/
 }
 
 .wrapper nav#main .header a {
@@ -369,8 +370,6 @@ textarea:focus {
   line-height: 50px;
   display: block;
   border-radius: 3px;
-  background: #0ac699;
-  color: #fff;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
@@ -381,7 +380,12 @@ textarea:focus {
   margin: 10px 0 10px;
 }
 
-.modal-content button:hover {
+.modal-content button .btn-success {
+  background: #0ac699;
+  color: #fff;
+}
+
+.modal-content button .btn-success:hover {
   background: #0bab85;
 }
 
@@ -505,4 +509,38 @@ textarea:focus {
   -ms-transition: all 0.55s ease;
   -o-transition: all 0.55s ease;
   transition: all 0.55s ease;
+}
+
+/* Rules for sizing the icon. */
+.material-icons {
+  vertical-align: middle;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
 }

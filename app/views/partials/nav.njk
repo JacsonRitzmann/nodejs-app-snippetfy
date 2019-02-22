@@ -1,30 +1,50 @@
-  <nav id="main">
-    <div class="header">
-      <strong>Minha biblioteca</strong> <a href="/signout" >Sair</a>
-    </div>
-    <div class="categories">
-      <strong>CATEGORIAS</strong>
-      <ul>
-        {% for category in categories %}
-        <li class="{% if category.id == ativeCategory %}active{% endif %}">
-          <a href="/app/category/{{ category.id }}">
-            {{ category.title }}<span>{{ category.Snippets.length }}</span>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      <a href="#" data-modal-open="#new-category">NOVA CATEGORIA</a>
-    </div>
-  </nav>
-  <div class="modal" id="new-category">
-    <form class="modal-content" action="/app/category/create" method="post">
-      <input
-        type="text"
-        name="title"
-        id="title"
-        placeholder="Titulo da Categoria"
-      />
-      <button type="submit">SALVAR CATEGORIA</button>
-      <a href="#" data-modal-close="#new-category">CANCELAR</a>
+<nav id="main">
+  <div class="header">
+    <strong>Minha biblioteca</strong> <a href="/signout">Sair</a>
+  </div>
+  <div class="categories">
+    <strong>CATEGORIAS</strong>
+    <ul>
+      {% for category in categories %}
+      <li class="{% if category.id == ativeCategory %}active{% endif %}">
+        <a href="/app/category/{{ category.id }}">
+          {{ category.title }}<span>{{ category.Snippets.length }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="#" data-modal-open="#new-category"
+      ><i class="material-icons md-18">add_box</i> NOVA CATEGORIA</a
+    >
+    <a href="#" data-modal-open="#edit-category"
+      ><i class="material-icons md-18">edit</i> EDITAR CATEGORIA</a
+    >
+  </div>
+</nav>
+<div class="modal" id="new-category">
+  <form class="modal-content" action="/app/category/create" method="post">
+    <input
+      type="text"
+      name="title"
+      id="title"
+      placeholder="Titulo da Categoria"
+    />
+    <button class="btn-success" type="submit"><i class="material-icons md-18">archive</i> SALVAR CATEGORIA</button>
+    <a href="#" data-modal-close="#new-category">CANCELAR</a>
+  </form>
+</div>
+<div class="modal" id="edit-category">
+  <form class="modal-content" action="/app/category/update/{{ ativeCategory }}?_method=PUT" method="post" >
+    <input type="text" name="title" id="title" placeholder="Informe o novo titulo da Categoria"  />
+    <button class="btn-success" type="submit"><i class="material-icons md-18">archive</i>SALVAR CATEGORIA</button>
+    <button type="button" class="btn-danger" data-modal-open="#delete-category" data-modal-close="#edit-category"><i class="material-icons md-18">delete</i> EXCLUIR CATEGORIA </button>
+    <a href="#" data-modal-close="#edit-category">CANCELAR</a>
+  </form>
+</div>
+  <div class="modal" id="delete-category">
+    <form class="modal-content" action="/app/category/delete/{{ ativeCategory }}?_method=DELETE" method="post" >
+      <h2>Deseja realmente excluir a Categoria</h2>
+      <button type="submit" class="btn-danger"><i class="material-icons md-18">delete_forever</i>EXCLUIR CATEGORIA</button>
+      <a href="#" data-modal-close="#delete-category">CANCELAR</a>
     </form>
   </div>
