@@ -20,14 +20,23 @@ No mysql é necessário criar a base de dados 'snippetfy'
 Na raiz do diretório criado 'nodejs-app-snippetfy'.É necessário criar um arquivo chamdo '.env', no qual será armazenado as seguintes variáveis de ambiente:
 
 `NODE_ENV=production`
+
 `PORT=3000`
+
 `DB_HOST=127.0.0.1`
+
 `DB_USER=root`
+
 `DB_PASSWORD=xxxx`
+
 `DB_BASENAME=snippetfy`
+
 `MAIL_HOST=xxxxx`
+
 `MAIL_PORT=2525`
+
 `MAIL_USER=xxx`
+
 `MAIL_PASSWORD=xxx`
 
 Dentro do diretório 'nodejs-app-snippetfy' execute o comando `yarn install`
@@ -54,4 +63,4 @@ Jacson ritzmann - jacson.ritzmann@hotmail.com
 
 Licença
 
-Este projeto está licenciado sob a licença MIT. veja o arquivo LICENSE.md para detalhes
+Este projeto está licenciado sob a licença MIT. veja o arquivo LICENSE.md para detalhes.
