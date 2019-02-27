@@ -13,7 +13,8 @@ Mantenha seus códigos, dicas e soluções organizados por categoria, com pesqui
 `git clone https://github.com/JacsonRitzmann/nodejs-app-snippetfy.git`
 
 Crie na raiz do diretório o arquivo '.env'
-``
+
+`
 NODE_ENV=development
 PORT=3000
 
@@ -26,6 +27,6 @@ MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
 MAIL_USER=f677dd0b5629f1
 MAIL_PASSWORD=1114960118e731
-``
+`
 
 Em desenvolvimento...
