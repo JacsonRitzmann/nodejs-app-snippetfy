@@ -43,3 +43,15 @@ Dica:
 Utilize o pm2 para manter a aplicação ativa em seu servidor
 
 ![alt text](https://github.com/JacsonRitzmann/nodejs-app-snippetfy/blob/master/screenshot.png)
+
+Versão
+
+1.0.0
+
+Autor
+
+Jacson ritzmann - jacson.ritzmann@hotmail.com
+
+Licença
+
+Este projeto está licenciado sob a licença MIT. veja o arquivo LICENSE.md para detalhes
