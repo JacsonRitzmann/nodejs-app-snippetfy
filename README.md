@@ -9,7 +9,12 @@ Mantenha seus códigos, dicas e soluções organizados por categoria, com pesqui
 
 - [NodeJS](https://nodejs.org/en/) - Aplicação foi testada na versão v11.10.0
 - [Yarn](https://yarnpkg.com/pt-BR/) - Para gerenciar a pacotes foi utilizado a versão 1.13.0
+
+#### V1.0 Mysql
+
 - [Mysql](https://mariadb.org) - Foi utilizado MariaDB versão 10.3
+
+#### V1.1 Postgres
 
 No local desejado realize o clone do repositório com o comando:
 
