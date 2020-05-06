@@ -55,7 +55,7 @@ Utilize o pm2 para manter a aplicação ativa em seu servidor
 
 Versão
 
-1.0.0
+1.0
 
 Autor
 
