@@ -1,2 +1,2 @@
-release: node_modules/.bin/sequelize db:migrate
+web: npx sequelize db:migrate:all && npx sequelize db:seed:all
 web: yarn start
