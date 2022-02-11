@@ -29,7 +29,7 @@
     "connect-session-sequelize": "^6.0.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^5.3.1",
     "express-session": "^1.15.6",
     "highlight.js": "^9.14.1",
     "markdown-it": "^8.4.2",
